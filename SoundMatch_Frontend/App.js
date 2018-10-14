@@ -4,41 +4,47 @@ import { View, ScrollView, ListView, StyleSheet, Text } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 20,
+    marginTop: 11.5,
+  },
+  view: {
+      height: 200,
+      borderWidth: 1,
+      backgroundColor: '#ABB2BF',
+      alignItems: 'center',
+      borderColor: 'white',
+  },
+  text: {
+      color: 'white',
+      fontWeight: 'bold',
+      fontFamily: 'sans-serif',
+      padding: 10,
   },
 });
 
 class ListViewDemo extends React.Component {
   constructor(props) {
     super(props);
-
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const usernames = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['Darrens Music', 'Prabhaths Music', 'Gautums Music', 'Katies Music', 'Harshs Music']),
+      dataSource: usernames.cloneWithRows(['Darren\'s Music', 'Prabhath\'s Music', 'Gautum\'s Music', 'Katie\'s Music', 'Harsh\'s Music']),
+    };
+    const timestamp = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    this.state = {
+      dataSource: timestamp.cloneWithRows(['10:12AM', '10:13AM', '10:14AM', '10:15AM', '10:16AM']),
     };
   }
   render() {
     return (
 
-      <ScrollView style={styles.container}>
-        <ListView
-        style={styles.container}
-        dataSource={this.state.dataSource}
-        renderRow={(data) => <View style={styles.container}><Text>{data}</Text></View>}/>
+      <ScrollView style = {styles.container}>
+          <ListView
+          style = {styles.container}
+          dataSource = {this.state.dataSource}
+          renderRow = {(data) => <View style={styles.view}><Text style={styles.text}>{data}</Text></View>}/>
       </ScrollView>
 
     );
   }
 }
-
-
-const styles = StyleSheet.create({
-  container: {
-      height: 200,
-      borderWidth: 0.5,
-      backgroundColor: 'steelblue'
-      alignItems: 'center'
-  }
-});
 
 export default ListViewDemo;

@@ -24,9 +24,7 @@ class ListViewDemo extends React.Component {
         <ListView
         style={styles.container}
         dataSource={this.state.dataSource}
-        renderRow={(data) => <View style={{height: 200, backgroundColor: 'steelblue'}}><Text>{data}</Text></View>}/>
-        
-        <View style={{height: 200, backgroundColor: 'white'}} />
+        renderRow={(data) => <View style={{height: 200, borderWidth: 0.5, backgroundColor: 'steelblue', alignItems: 'center'}}><Text>{data}</Text></View>}/>
       </ScrollView>
 
     );
@@ -44,4 +42,3 @@ class ListViewDemo extends React.Component {
 // });
 
 export default ListViewDemo;
-

@@ -18,12 +18,12 @@ REST API server for Soundmatch
 * POST `/register` -- register new user
   * example - `http -v POST https://sound-match.herokuapp.com/register username="KarlMarx" password="lala"`
 
-* GET `/authenticate/<username>/<password> -- authenticate a user
+* GET `/authenticate/username/password -- authenticate a user
   * example - `http -v GET https://sound-match.herokuapp.com/authenticate/KarlMarx/lala`
 
 * POST `/createpost` -- create a new post
   * example - `http -v POST https://sound-match.herokuapp.com/createpost username="KarlMarx" message="My first post"`
 
-* GET `/getposts` -- get all posts for a user
+* GET `/getposts/username` -- get all posts for a user
   * example - `http -v GET https://sound-match.herokuapp.com/getposts/KarlMarx`
 

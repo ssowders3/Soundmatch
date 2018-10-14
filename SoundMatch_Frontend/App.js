@@ -14,7 +14,7 @@ class ListViewDemo extends React.Component {
 
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: ds.cloneWithRows(['Darrens Music', 'Prabhaths Music', 'Gautums Music', 'Katies Music']),
+      dataSource: ds.cloneWithRows(['Darrens Music', 'Prabhaths Music', 'Gautums Music', 'Katies Music', 'Harshs Music']),
     };
   }
   render() {
@@ -24,13 +24,8 @@ class ListViewDemo extends React.Component {
         <ListView
         style={styles.container}
         dataSource={this.state.dataSource}
-        renderRow={(data) => <View><Text>{data}</Text></View>}
-        />
-        <View style={{height: 200, backgroundColor: 'steelblue'}}>
-          <Text>ajskldjf</Text>
-        </View>
-        <View style={{height: 200, backgroundColor: 'skyblue'}} />
-        <View style={{height: 200, backgroundColor: 'powderblue'}} />
+        renderRow={(data) => <View style={{height: 200, backgroundColor: 'steelblue'}}><Text>{data}</Text></View>}/>
+        
         <View style={{height: 200, backgroundColor: 'white'}} />
       </ScrollView>
 

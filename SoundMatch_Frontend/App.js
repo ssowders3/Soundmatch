@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ScrollView, ListView, StyleSheet, Text } from 'react-native';
+import { View, ScrollView, ListView, StyleSheet, Text, Image} from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,15 +10,22 @@ const styles = StyleSheet.create({
       height: 200,
       borderWidth: 1,
       backgroundColor: '#ABB2BF',
-      alignItems: 'center',
       borderColor: 'white',
+      flexDirection: 'row'
   },
   text: {
       color: 'white',
       fontWeight: 'bold',
       fontFamily: 'sans-serif',
+      fontSize: 20,
       padding: 10,
   },
+  image: {
+      width: 40,
+      height: 40,
+      alignSelf: 'flex-start',
+      margin: 10,
+  }
 });
 
 class ListViewDemo extends React.Component {
@@ -28,10 +35,7 @@ class ListViewDemo extends React.Component {
     this.state = {
       dataSource: usernames.cloneWithRows(['Darren\'s Music', 'Prabhath\'s Music', 'Gautum\'s Music', 'Katie\'s Music', 'Harsh\'s Music']),
     };
-    const timestamp = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-    this.state = {
-      dataSource: timestamp.cloneWithRows(['10:12AM', '10:13AM', '10:14AM', '10:15AM', '10:16AM']),
-    };
+    
   }
   render() {
     return (
@@ -40,7 +44,10 @@ class ListViewDemo extends React.Component {
           <ListView
           style = {styles.container}
           dataSource = {this.state.dataSource}
-          renderRow = {(data) => <View style={styles.view}><Text style={styles.text}>{data}</Text></View>}/>
+          renderRow = {(data) => <View style={styles.view}><Image
+          style={styles.image}
+          source={{uri: 'http://www.personalbrandingblog.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png'}}/>
+          <Text style={styles.text}>{data}</Text></View>}/>
       </ScrollView>
 
     );

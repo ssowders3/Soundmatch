@@ -5,7 +5,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hello World</Text>
+        <ScrollView style={{height: 200, backgroundColor: 'steelblue'}} />
+        <ScrollView style={{height: 200, backgroundColor: 'skyblue'}} />
+        <ScrollView style={{height: 200, backgroundColor: 'powderblue'}} />
+        <ScrollView style={{height: 200, backgroundColor: 'white'}} />
       </View>
     );
   }
@@ -14,8 +17,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+    alignItems: 'stretch',
   },
 });

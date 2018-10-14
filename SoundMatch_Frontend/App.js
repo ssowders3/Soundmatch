@@ -24,21 +24,21 @@ class ListViewDemo extends React.Component {
         <ListView
         style={styles.container}
         dataSource={this.state.dataSource}
-        renderRow={(data) => <View style={{height: 200, borderWidth: 0.5, backgroundColor: 'steelblue', alignItems: 'center'}}><Text>{data}</Text></View>}/>
+        renderRow={(data) => <View style={styles.container}><Text>{data}</Text></View>}/>
       </ScrollView>
 
     );
   }
 }
-///////
 
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     flexDirection: 'column',
-//     alignItems: 'stretch',
-//   },
-// });
+const styles = StyleSheet.create({
+  container: {
+      height: 200,
+      borderWidth: 0.5,
+      backgroundColor: 'steelblue'
+      alignItems: 'center'
+  }
+});
 
 export default ListViewDemo;

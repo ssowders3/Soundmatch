@@ -10,9 +10,7 @@ class PostModel(db.Model):
 	
 	message = db.Column(db.Text, nullable=False)
 
-	owner_name = db.Column(db.String,db.ForeignKey('users.username'))
-	owner = db.relationship('UserModel')
-
+	owner_name = db.Column(db.String(80), nullable=False)
 
 	def __init__(self, owner_name, message):
 
